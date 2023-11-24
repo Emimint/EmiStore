@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styles: ``
 })
 export class HomeComponent {
-
+  cols = 3;
+  onColumnsCountChange(colsNum: number): void{
+    this.cols = colsNum;
+  }
 }
