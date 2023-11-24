@@ -6,10 +6,14 @@ import { Component } from '@angular/core';
   styles: ``
 })
 export class ProductsHeaderComponent {
-  sort = 'desc';
+  sort : string = 'desc';
+  itemsShowCount : number = 15;
 
   onSortUpdated(newSort: string): void{
     this.sort = newSort;
   }
 
+  onItemsUpdated(count: number): void{
+    this.itemsShowCount = count;
+  }
 }
