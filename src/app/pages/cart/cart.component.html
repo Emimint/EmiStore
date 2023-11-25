@@ -64,7 +64,12 @@
         </button>
       </td>
       <td mat-footer-cell *matFooterCellDef>
-        <button class="float-right" mat-raised-button color="primary" routerLink="/home">Proceed to checkout</button>
+        <button 
+        class="float-right" 
+        mat-raised-button color="primary" 
+        routerLink="/home"
+        (click)="onCheckOut()"
+        >Proceed to checkout</button>
       </td>
     </ng-container>
 
