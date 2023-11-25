@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   getProducts(): void{
-    this.productSubscription = this.storeService.getAllProducts(this.count, this.sort)
+    this.productSubscription = this.storeService.getAllProducts(this.count, this.sort, this.currentCategory)
       .subscribe(_products => {
         this.products = _products;
     });
@@ -53,6 +53,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   onShowCategory(category: string): void {
     this.currentCategory = category;
+    this.getProducts();
   }
 
   onAddToCart(product: Product): void {
