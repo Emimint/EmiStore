@@ -31,6 +31,19 @@ export class CartService {
       acc + item.quantity * item.price, 0);
   }
 
+  removeQty(item: CartItem): void { 
+    const items = [...this.cart.value.items];
+
+    const itemInCart = items.find((_item) => _item.id === item.id);
+
+    if (itemInCart && itemInCart.quantity > 0) {
+      itemInCart.quantity -= 1;
+      this.cart.next({ items });
+      this._snackBar.open(`One unit of ${item.name} removed from cart`, 'Ok', { duration: 1000 }); 
+    } else
+      this.removeFromCart(item);
+  }
+
   clearCart(): void{
     this.cart.next({ items: [] });
     this._snackBar.open('Your cart is now empty', 'Ok', { duration: 1000 }); 
