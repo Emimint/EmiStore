@@ -22,7 +22,6 @@ export class CartComponent implements OnInit {
       { id: 10, product: "https://placehold.co/150", name: "Sony", price: 100, quantity: 1 },
     ]
   };
-
   dataSource: Array<CartItem> = [];
   displayedColumns: Array<string> = [
     'product',
@@ -36,19 +35,22 @@ export class CartComponent implements OnInit {
   constructor(private cartService: CartService){}
   
     ngOnInit(): void {
-      this.dataSource = this.cart.items;
+      this.cartService.cart.subscribe((_cart: Cart) => {
+        this.cart = _cart;
+        this.dataSource = this.cart.items;
+      });
     }
   
   getTotal(items: Array<CartItem>): number {
     return this.cartService.getTotal(items);
   }
 
-  removeItem(item: CartItem): void {
-    this.dataSource = this.dataSource.filter(i => i!== item);
+  onRemoveFromCart(item: CartItem): void {
+    this.cartService.removeFromCart(item);
   }
 
-  emptyCart(): void {
-    this.dataSource = [];
+  onClearCart(): void {
+    this.cartService.clearCart();
   }
 
 }

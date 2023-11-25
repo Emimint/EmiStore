@@ -14,10 +14,10 @@ export class CartService {
   addToCart(item: CartItem): void{
     const items = [...this.cart.value.items];
 
-    const itemsInCart = items.find((_item) => _item.id === item.id);
+    const itemInCart = items.find((_item) => _item.id === item.id);
 
-    if (itemsInCart) {
-      itemsInCart.quantity += 1;
+    if (itemInCart) {
+      itemInCart.quantity += 1;
     } else {
       items.push(item);
     }
@@ -34,6 +34,16 @@ export class CartService {
   clearCart(): void{
     this.cart.next({ items: [] });
     this._snackBar.open('Your cart is now empty', 'Ok', { duration: 1000 }); 
+  }
+
+  removeFromCart(item: CartItem): void {
+    const items = [...this.cart.value.items];
+
+    const itemsInCart = items.filter((_item) => _item.id !== item.id);
+
+    this.cart.next({ items: itemsInCart });
+
+    this._snackBar.open(`${item.name} removed from cart`, 'Ok', { duration: 1000 }); 
   }
 
 }
