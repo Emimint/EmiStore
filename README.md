@@ -2,6 +2,9 @@
 
 This application is mock implementation of a standard e-commerce website. The user can filter the display of the products by category, select and purchase multiple products.
 
+![image](https://github.com/Emimint/EmiStore/assets/90863470/bc5c82c3-62f6-4a19-a9ee-dd24d4b115cb)
+
+
 ## Tech Stack
 
 - Frontend
