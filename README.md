@@ -1,27 +1,33 @@
-# Store
+# EmiStore
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+This application is mock implementation of a standard e-commerce website. The user can filter the display of the products by category, select and purchase multiple products.
 
-## Development server
+## Tech Stack
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Frontend
+  - [Angular](https://angular.io/)
+  - [Angular Material](https://material.angular.io/)
+  - [Tailwind](https://tailwindcss.com/)
+  - [Fake App Store API](https://fakestoreapi.com/)
+- Backend
+  - NodeJS
+  - Express.js
+  - [Stripe](https://stripe.com) for payment form
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Local installation
 
-## Build
+Make sure to have Node.js installed. In your terminal, run `npm install` to install all dependencies. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+In order to access the back-end payment service, cd to `serve`, and again run `npm install`. Go back to the root to start the server.
 
-## Running unit tests
+Run `ng serve`. In the browser of your choice, navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Further improvements
+- Make the entire application web responsive
+- Add a search engine
+- Improve performance by add local storage support
 
-## Running end-to-end tests
+## Acknowledgments
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Original project idea : [FreeCodeCamp](https://www.freecodecamp.org/)
